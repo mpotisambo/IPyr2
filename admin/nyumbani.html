@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TORMS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap/css/main.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--<script defer src="script.js"></script>-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Traffic Offense Record Management System</title>
+    <style>
+        footer {
+            position: fixed;
+            Width: 100%;
+            bottom: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 24px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="nav">
+        <!--logo-->
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                MysteryCode
+            </div>
+        </div>
+        <!--toggle button for mobile-->
+
+        <div class="nav-links">
+            <ul>
+                <!--menu Item-->
+
+                <!--Social Icon-->
+
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar" id="sidebar">
+            <!--profile image & text-->
+            <div class="profile">
+                <img src="COA.png" alt="profile_picture">
+                <h3>Staff</h3>
+
+            </div>
+            <!--menu item-->
+            <ul>
+                <!-- <li>
+                    <a href="#" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li> -->
+                <li id="dashli">
+                    <a href="#dashboard" id="dash">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">My Dashboard</span>
+                    </a>
+                </li>
+                <li id="#boomli">
+                    <a href="#boompage" id="boompage">
+                        <span class="icon"><i class="fa-solid fa-car-burst"></i></span>
+                        <span class="item">Offenses</span>
+                    </a>
+                </li>
+                <li id="#priceli">
+                    <a href="#pricepage" id="pricepage">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Offenses List</span>
+                    </a>
+                </li>
+                <li id="expenseli">
+                    <a href="#expensepage" id="expensepage">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Offense Records</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.php" id="rudi" name="rudi">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!---start of Home page--->
+    <div class="container-fluid" style="margin-left: 14%;">
+        <h1 align="center">Welcome to Traffic Offense Record Management System</h1>
+        <div class="row top-10">
+            <div class="col-md-10 col-sm-10 col-xs-10" style="margin-top: 10px;">
+                <div class="container-fluid">
+                    <div class="row mt-9" id="dashboard">
+                        <div class="col-md-3">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                <div class="card ">
+
+                                    <span>
+                                        <div class="">
+
+                                            <h5 class="card-header"> <i class="fas fa-chart-line"></i>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Total Offenses Commited</span>
+                                            </h5>
+                                        </div>
+
+                                    </span>
+                                    <div class="card-body ">
+                                        <p class="card-text " id="lastboom">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                <div class="card ">
+
+                                    <span>
+                                        <div class="">
+
+                                            <h5 class="card-header"> <i class="fa-solid fa-address-book"></i>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Total drivers Listed</span>
+                                            </h5>
+                                        </div>
+
+                                    </span>
+                                    <div class="card-body ">
+                                        <p class="card-text " id="amountsaved">24 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                <div class="card ">
+                                    <span>
+                                        <div class="">
+
+                                            <h5 class="card-header"><i class="fa-solid fa-person-falling-burst"></i>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Total Death</span>
+                                            </h5>
+                                        </div>
+
+                                    </span>
+                                    <div class="card-body ">
+                                        <p class="card-text " id="actualbalance"> 32 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-md-3">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                <div class="card ">
+                                    <span>
+                                        <div class="">
+
+                                            <h5 class="card-header"> <i class="fa-solid fa-sack-dollar"></i>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Total charges</span>
+                                            </h5>
+                                        </div>
+
+                                    </span>
+                                    <div class="card-body ">
+                                        <p class="card-text " id="totalexpense">0 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--ADD BOOM-->
+                    <div class="row mt-5" id="addboom">
+                        <div class="col-md-8 offset-2">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                <div class="card ">
+                                    <h5 class="card-header ">Ingiza kosa la Leo</h5>
+                                    <div class="card-body ">
+                                        <p class="card-text ">
+                                            <div id="error "></div>
+                                            <form id="form" name="myform">
+                                                <div class="form-group row "><label for="inputBoom " class="col-sm-2 col-form-label ">Kosa la</label>
+                                                    <div class="col-sm-6 "><input name="boom" type="number" min="0" class=" form-control " id="inputBoom " placeholder="ongeza kosa" required></div>
+                                                </div><br>
+                                            </form>
+                                            <div class="form-group row ">
+                                                <div class="col-sm-2 "></div>
+                                                <div class="col-sm-10 "><a href="#" class="btn btn-primary" id="save">Submit </a></div>
+                                            </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- OFFENSES PRICES-->
+                    <div class="row mt-5" id="addprice">
+                        <div class="col-md-8 offset-2">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                <table>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Offense</th>
+                                        <th>Penalty Price</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>Failure to stop at a zebra crossing</td>
+                                        <td>20000</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td>Running Over Speed Limit</td>
+                                        <td>30000</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td> Driving without License</td>
+                                        <td>30000</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td>No Fire extinguisher and triangles</td>
+                                        <td>15000</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td>Failure to stop at a railway crossing</td>
+                                        <td>5000</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--ADD EXPENSES-->
+                    <div class="row mt-5" id="addexpenses">
+                        <div class="col">
+                            <div class="container ">
+                                <div class="row ">
+                                    <div class="col-md-5 my-3 ">
+                                        <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                            <div class="card ">
+                                                <span>
+                                                    <div class="">
+
+                                                        <h5 class="card-header"><i class="fa-solid fa-circle-plus"></i>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Add Record</span>
+                                                        </h5>
+                                                    </div>
+
+                                                </span>
+
+                                                <div class="card-body ">
+                                                    <p class="card-text ">
+                                                        <!-- expense form -->
+                                                        <form id="formxp" class=" expense-form ">
+                                                            <h5 class="text-capitalize ">Register Offense</h5>
+                                                            <div class="form-group "><input type="text " name="chagua" class="form-control expense-input " id="chagua" required></div>
+
+                                                            <h5 class="text-capitalize ">Enter Licence Number</h5>
+                                                            <div class="form-group "><input type="text " name="inputexpense" class="form-control expense-input " id="inputexpense" required></div>
+
+                                                            <h5 class="text-capitalize ">Penalty fee</h5>
+                                                            <div class="form-group "><input type="number" name="inputamount" min="0" class="form-control expense-input " id="inputamount" required></div>
+
+                                                            <!-- submit button -->
+                                                        </form><br><button type="submit " class="btn btn-primary text-capitalize expense-submit " id="savexp">add record</button>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 my-3 ">
+                                        <div class="shadow-lg p-3 mb-5 bg-white rounded ">
+                                            <div class="card ">
+                                                <span>
+                                                    <div class="">
+
+                                                        <h5 class="card-header"><i class="fa-solid fa-chart-simple"></i>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Reports</span>
+                                                        </h5>
+                                                    </div>
+
+                                                </span>
+                                                <div class="card-body ">
+                                                    <table class="table " id="tablez">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th scope="col">License No</th>
+                                                                <!-- <th scope="col">Expenses</th>-->
+                                                                <th scope="col">Offense</th>
+                                                                <th scope="col">Penalty Fee</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table><a href="#" class="btn btn-primary" id="caltotal">Calculate Total</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+                $('#addboom').hide();
+                $('#addexpenses').hide();
+                $('#addprice').hide();
+
+
+                $('#dash').on('click', function() {
+                        $('#addboom').hide();
+                        $('#addexpenses').hide();
+                        $('#addprice').hide();
+                        $('#dashboard').show();
+                        $('#dashli').addClass('active');
+                        $('#boomli').removeClass('active');
+                        $('#expenseli').removeClass('active');
+                        $('#priceli').removeClass('active');
+                        $('#rudi').removeClass('active');
+                    }
+
+                );
+
+                $('#boompage').on('click', function() {
+                        $('#addboom').show();
+                        $('#addexpenses').hide();
+                        $('#dashboard').hide();
+                        $('#addprice').hide();
+                        $('#boomli').addClass('active');
+                        $('#dashli').removeClass('active');
+                        $('#expenseli').removeClass('active')
+                        $('#priceli').removeClass('active');
+                    }
+
+                );
+
+
+                $('#expensepage').on('click', function() {
+                        $('#addboom').hide();
+                        $('#addexpenses').show();
+                        $('#dashboard').hide();
+                        $('#addprice').hide();
+                        $('#expenseli').addClass('active');
+                        $('#dashli').removeClass('active');
+                        $('#boomli').removeClass('active');
+                        $('#priceli').removeClass('active');
+
+                    }
+
+                );
+
+                $('#pricepage').on('click', function() {
+                        $('#addboom').hide();
+                        $('#addexpenses').hide();
+                        $('#dashboard').hide();
+                        $('#addprice').show();
+                        $('#expenseli').removeClass('active');
+                        $('#dashli').removeClass('active');
+                        $('#boomli').removeClass('active');
+                        $('#priceli').addClass('active');
+
+                    }
+
+                );
+
+                //ADD BOOM FUNCTION  boom weka kosa 
+                $('#save').on('click', function() {
+                        var kosa = $('#form').find('input[name="boom"]').val();
+
+                        if (kosa >= 0) {
+                            $('#lastboom').html(kosa);
+                            var save = kosa + 1;
+                            // $('#amountsaved').html(save);
+                            var balance = kosa - save;
+                            // $('#actualbalance').html(balance);
+                            $('#dashboard').show();
+                            $('#addboom').hide();
+                            $('#addexpenses').hide();
+                            $('#addprice').hide();
+                        } else {
+                            alert("New Offense Added");
+                        }
+
+                        // ADD EXPENSES FUNCTION
+                        $('#savexp').on('click', function() {
+                                var xp = $('#formxp').find('input[name="inputexpense"]').val();
+                                //var trh = $('#formxp').find('input[name="tarehe"]').val();
+                                var amt = $('#formxp').find('input[name="inputamount"]').val();
+                                var chag = $('#formxp').find('input[name="chagua"]').val();
+
+
+                                $('#tablez tbody').append('<tr class="child"><td>' + xp + '<td>' + chag + '</td><td class="count-me">' + amt + '</td></tr > ');
+                                $('#actualbalance').html(balance);
+
+                                alert("New Offense Registered");
+
+                            }
+
+                        );
+                        //log out
+
+                        $('#rudi').on('click', function() {
+
+                                window.location.href = "../kwetu.php";
+
+                            }
+
+                        );
+
+
+                        //CALCULATE TOTAL EXPENSES
+
+                        $('#caltotal').on('click', function() {
+                                var tds = document.getElementById('tablez').getElementsByTagName('td');
+                                var sum = 0;
+
+                                for (var i = 0; i < tds.length; i++) {
+                                    if (tds[i].className == 'count-me') {
+                                        sum += isNaN(tds[i].innerHTML) ? 0 : parseInt(tds[i].innerHTML);
+                                    }
+                                }
+
+                                $('#totalexpense').html(sum);
+                                $('#addboom').hide();
+                                $('#addprice').hide();
+                                $('#addexpenses').hide();
+                                $('#dashboard').show();
+                                $('#dashli').addClass('active');
+                                $('#boomli').removeClass('active');
+                                $('#expenseli').removeClass('active');
+                                $('#priceli').removeClass('active');
+                            }
+
+                        );
+
+
+                    }
+
+                );
+
+
+            }
+
+        );
+    </script>
+
+
+
+</body>
+
+</div>
+<footer class="main-footer text-sm" align="right"><strong>Copyright © 2022.
+        <!-- <a href=""></a>--></strong>All rights reserved. <div class="float-right d-none d-sm-inline-block"><b>(by: <a href=" mailto:mpotisambo8@gmail.com" target="blank">TORMS</a>)</b>CIVE </div>
+</footer>
+
+</html>
+
+</html>
